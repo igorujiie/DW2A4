@@ -1,0 +1,61 @@
+<script>
+// A herença no Javascript é implementada por meio do Prototype Chain
+//Cada função, objeto ou array tem um link para outro prototype
+
+
+/*const meuArr = [1,2,3]
+meuArr.map(x=> console.log(x))*/
+
+//meuArr.__proto__ => Array.prototype => Object.prototype => null
+
+
+/*const funcao = function(){
+    2+2
+}*/
+
+/*const meuObj ={a:1, b:2}
+
+//const novoObj = meuObj
+const novoObj = Object.create(meuObj)
+novoObj.b = 5
+console.log(meuObj.b + novoObj.b)*/
+
+
+class Pessoa{
+    constructor(nome,idade){
+        this.nome = nome
+        this.idade = idade
+    }
+    incrementAge(){
+        this.idade++
+    }
+}
+const prof = new Pessoa('Igor',24)
+prof.incrementAge()
+console.log(prof)
+
+class Aluno extends Pessoa{
+    constructor(nome,idade,matricula){
+        super(nome,idade)
+        this.matricula = matricula
+    }
+}
+
+const aluno = new Aluno('Igor',24,'20112')
+console.log(aluno)
+
+class Disciplina{
+    constructor(nome,professor, aluno){
+        this.nome = nome
+        this.professor = professor
+        this.aluno = aluno
+    }
+}
+
+
+
+const disciplina = new Disciplina('DW2A4',prof,aluno)
+console.log(disciplina)
+
+
+</script>

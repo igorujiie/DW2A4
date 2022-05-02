@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+
+    <title>Coronavírus (COVID-19)</title>
+  </head>
+  <body>
+    <header class="header">
+    
+      <h2>Dados relacionados à Covid-19</h2>
+    </header>
+
+    <div class="container">
+      <form class="my-form">
+        <label id="label" for="cep">Digite um CEP: </label>
+        <input id="input-cep" type="text" data-js="cep" />
+        <button class="button" id="button">Pesquisar</button>
+      </form>
+
+      <div class="output">
+        <p>Estado: <span id="span_estado"></span></p>
+        <p>Casos: <span id="span_casos"></span></p>
+        <p>Mortes: <span id="span_mortes"></span></p>
+        <p>Suspeitos: <span id="span_suspeitos"></span></p>
+        <p>Recusados: <span id="span_recusados"></span></p>
+        <p id="update">Última atualização: <span id="span_atualizacao"></span></p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p> Igo Kazuhiko Ujiie - Developer </p>
+    </footer>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

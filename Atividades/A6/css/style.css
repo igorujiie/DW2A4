@@ -30,7 +30,8 @@
   }
   
   body {
-    background-color: rgba(77, 168, 190, 0.781);
+    /* background-color: rgba(77, 168, 190, 0.781); */
+    background: url('../ímg/depositphotos_387201424-stock-photo-infected-virus-word-corona-virus.jpg');
   }
 
   

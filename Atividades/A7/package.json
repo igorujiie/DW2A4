@@ -1,0 +1,23 @@
+{
+  "name": "dw2a4",
+  "version": "1.0.0",
+  "description": "DESENVOLVIMENTO DE PROJETO WEB - PROF jONATHAN",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igorujiie/DW2A4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/igorujiie/DW2A4/issues"
+  },
+  "homepage": "https://github.com/igorujiie/DW2A4#readme",
+  "dependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
+}

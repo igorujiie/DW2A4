@@ -14,10 +14,10 @@ export function RepositoryList(){
 
     const [repositories, setRepositories] = useState<Repository[]>([])
 
-    useEffect(() => {
+     useEffect(() => {
         fetch('https://api.github.com/users/igorujiie/repos')
-        .then(response => response.json)
-        .then(data => setRepositories(data))
+            .then(response => response.json())
+            .then(data => setRepositories(data))
     },[])
 
 

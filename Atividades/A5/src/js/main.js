@@ -1,45 +1,21 @@
-const masks = {
-    nome (value) {
-         return value
-             .replace(/D/g, "");
-       },
-   cpf (value) {
-     return value
-       .replace(/\D+/g, '')
-       .replace(/(\d{3})(\d)/, '$1.$2')
-       .replace(/(\d{3})(\d)/, '$1.$2')
-       .replace(/(\d{3})(\d{1,2})/, '$1-$2')
-       .replace(/(-\d{2})\d+?$/, '$1')
-   },
- 
-   dataNasc(value) {
-     return value
-       .replace(/\D/g, "")
-       .replace(/(\d{2})(\d)/, "$1/$2")
-       .replace(/(\d{2})(\d)/, "$1/$2")
-       .replace(/(\d{4})(\d+?$)/, "$1");
-   },
- 
-   phone(value) {
-     return value
-       .replace(/\D/g, "")
-       .replace(/(\d{2})(\d)/, "($1) $2")
-       .replace(/(\d{4})(\d)/, "$1-$2")
-       .replace(/(\d{4})-(\d)(\d{4})/, "$1$2-$3")
-       .replace(/(-\d{4})\d+?$/, "$1");
-   },
- 
-   cep(value){
-       return value
-       .replace(/\D/g, "")
-       .replace(/(\d{5})(\d)/, "$1-$2")
-       .replace(/(-\d{3})\d+?$/, "$1");
-   },
- }
- document.querySelectorAll('input').forEach($input => {
-   const field = $input.dataset.js
- 
-   $input.addEventListener('input', e => {
-     e.target.value = masks[field](e.target.value)
-   }, false)
- })
+import { mask } from "./modules/mask.js";
+import { valid } from "./modules/valid.js";
+
+document.querySelectorAll('input').forEach(($input) => {
+  const field = $input.dataset.js;
+
+  if (field in mask) {
+    $input.addEventListener('input', (e) => {
+      e.target.value = mask[field](e.target.value);
+    }, false);
+  }
+
+  $input.addEventListener('input', (e) => {
+    if (valid[e.target.id](e.target.value)) {
+      e.target.classList.remove("errorInput");
+    } else {
+      e.target.classList.add("errorInput");
+    };
+  }, false);
+
+});
